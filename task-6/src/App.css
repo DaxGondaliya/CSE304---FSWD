@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1a1a40;
+  color: white;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.todo-box {
+  background-color: #2d2d60;
+  padding: 30px;
+  border-radius: 20px;
+  width: 360px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.input-area {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.task-input {
+  flex-grow: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1a1a40;
+  color: white;
+}
+
+.add-button,
+.voice-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-button {
+  background-color: #a66cff;
+  color: white;
+}
+
+.add-button:hover {
+  background-color: #b28eff;
+}
+
+.voice-button {
+  background-color: #ff66b2;
+  color: white;
+}
+
+.voice-button:hover {
+  background-color: #ff85c2;
+}
+
+.task-list {
+  margin-top: 10px;
+}
+
+.task-card {
+  background-color: #a66cff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.icons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 8px;
+  font-size: 16px;
+}
+
+.edit-btn:hover {
+  color: yellow;
+}
+
+.delete-btn:hover {
+  color: red;
+}
+
+
+.edit-input {
+  flex-grow: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  margin-right: 10px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #1a1a40;
+}
+
+.save-btn {
+  background-color: #4caf50;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.save-btn:hover {
+  background-color: #66bb6a;
+}

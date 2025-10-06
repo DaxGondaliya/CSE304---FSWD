@@ -1,0 +1,104 @@
+/* Make sure body takes full screen */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Full page centered background */
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Counter card */
+.counter-container {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 360px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.counter-container:hover {
+  transform: scale(1.02);
+}
+
+/* Title */
+.counter-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Count display */
+.count {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #0077ff;
+  margin-bottom: 30px;
+}
+
+/* Button group */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* General button style */
+button {
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Button colors */
+.increase {
+  background: #28a745;
+  color: #fff;
+}
+.increase:hover {
+  background: #218838;
+}
+
+.decrease {
+  background: #dc3545;
+  color: #fff;
+}
+.decrease:hover {
+  background: #b02a37;
+}
+
+.reset {
+  background: #555;
+  color: #fff;
+  margin-top: 10px;
+}
+.reset:hover {
+  background: #333;
+}
+
+/* Mobile friendly tweaks */
+@media (max-width: 480px) {
+  .count {
+    font-size: 3rem;
+  }
+  button {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}

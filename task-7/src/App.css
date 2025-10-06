@@ -1,0 +1,94 @@
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f9;
+  overflow-x: hidden;
+}
+
+/* Root app layout */
+.app {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Sidebar toggle menu button */
+.menu-button {
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px 16px;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+  background-color: #b0413e;
+  color: white;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-button:hover {
+  background-color: #922f2f;
+}
+
+/* Sidebar styles (in Sidebar.css if separated) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -220px;
+  width: 200px;
+  height: 100%;
+  background-color: #2e3b55;
+  padding-top: 60px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 20px;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.sidebar a:hover {
+  color: #ffcd3c;
+}
+
+/* Main content styling */
+.main-content {
+  flex: 1;
+  margin-left: 0;
+  padding: 80px 40px 40px;
+  min-height: 100vh;
+  overflow-y: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .main-content {
+    padding: 100px 20px 40px;
+  }
+
+  .sidebar {
+    width: 180px;
+  }
+
+  .menu-button {
+    font-size: 26px;
+    padding: 8px 14px;
+  }
+}
