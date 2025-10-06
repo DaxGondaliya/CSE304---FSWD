@@ -1,0 +1,48 @@
+/* Make sure app is centered */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Background */
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Card */
+.card {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Title */
+.card h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Subtitle */
+.card p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Smooth fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

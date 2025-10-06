@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Input Error</title>
+  <link rel="stylesheet" href="https://unpkg.com/simpledotcss/simple.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 50%, #ff8e8e 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,0 1000,300 1000,1000 0,700"/></svg>') no-repeat center center;
+      background-size: cover;
+      z-index: -1;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      max-width: 450px;
+      width: 100%;
+      padding: 40px 35px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.2);
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.3);
+      animation: shake 0.5s ease-in-out;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: 26px;
+      color: #e74c3c;
+      font-weight: 700;
+      position: relative;
+    }
+
+    h1::before {
+      content: '⚠️';
+      font-size: 40px;
+      display: block;
+      margin-bottom: 10px;
+      animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    .error-box {
+      background: linear-gradient(135deg, #ffebeb, #ffe0e0);
+      border: 2px solid #ffcdd2;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .error-box p {
+      font-size: 16px;
+      color: #c62828;
+      margin: 0;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    .error-box strong {
+      color: #b71c1c;
+      font-weight: 700;
+    }
+
+    a {
+      display: inline-block;
+      padding: 14px 28px;
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    a:hover::before {
+      left: 100%;
+    }
+
+    a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(76, 175, 80, 0.3);
+      background: linear-gradient(135deg, #5cbf60, #4caf50);
+    }
+
+    a:active {
+      transform: translateY(0);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 30px 20px;
+        margin: 10px;
+      }
+      
+      h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Oops! There was a problem.</h1>
+    </header>
+
+    <main>
+      <div class="error-box">
+        <p><strong>Error:</strong> <%= errorMessage %></p>
+      </div>
+      <a href="/">Try Again</a>
+    </main>
+  </div>
+</body>
+</html>

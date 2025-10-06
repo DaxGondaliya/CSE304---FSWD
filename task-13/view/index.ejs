@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Income Calculator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,0 1000,300 1000,1000 0,700"/></svg>') no-repeat center center;
+      background-size: cover;
+      z-index: -1;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      max-width: 450px;
+      width: 100%;
+      padding: 40px 35px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.2);
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.3);
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 30px;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+      text-align: left;
+      font-weight: 600;
+      color: #444;
+      font-size: 15px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 15px 18px;
+      border-radius: 12px;
+      border: 2px solid #e1e5e9;
+      background: #fafbfc;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: #667eea;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      transform: translateY(-1px);
+    }
+
+    input[type="text"]:hover {
+      border-color: #b8c2ff;
+    }
+
+    input[type="text"]::placeholder {
+      color: #999;
+      font-style: italic;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 16px 24px;
+      width: 100%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    button:hover::before {
+      left: 100%;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 30px 20px;
+        margin: 10px;
+      }
+      
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Calculate Total Income</h1>
+      <p class="subtitle">Please enter your income from two different sources below.</p>
+    </header>
+
+    <main>
+      <form action="/calculate" method="POST">
+        <label for="income1">Income from Source 1 (₹):</label>
+        <input 
+          type="text" 
+          id="income1" 
+          name="income1" 
+          placeholder="e.g., 50000" 
+          value="<%= typeof income1 !== 'undefined' ? income1 : '' %>"
+          required
+        >
+
+        <label for="income2">Income from Source 2 (₹):</label>
+        <input 
+          type="text" 
+          id="income2" 
+          name="income2" 
+          placeholder="e.g., 25000" 
+          value="<%= typeof income2 !== 'undefined' ? income2 : '' %>"
+          required
+        >
+
+        <button type="submit">Calculate Total</button>
+      </form>
+    </main>
+  </div>
+</body>
+</html>
