@@ -1,0 +1,73 @@
+.dashboard {
+  font-family: sans-serif;
+  padding: 20px;
+  max-width: 600px;
+  margin: 30px auto;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-section input {
+  padding: 8px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.datetime {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.feedback-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.feedback-section button {
+  padding: 10px 14px;
+  margin: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.feedback-section button:hover {
+  background-color: #0056b3;
+}
+
+.feedback-totals {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.personal-counter {
+  text-align: center;
+}
+
+.personal-counter button {
+  padding: 8px 12px;
+  margin: 5px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.personal-counter button:hover {
+  background-color: #1e7e34;
+}

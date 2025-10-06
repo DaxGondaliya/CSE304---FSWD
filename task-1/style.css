@@ -1,0 +1,19 @@
+body {
+  background: #f8f9fa;
+}
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+.navcontainer{
+    margin-left: 800px;
+}
+.herocontainer{
+    opacity: 0.90;
+}
+.C1{
+    height: 416px;
+}
